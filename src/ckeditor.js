@@ -38,6 +38,7 @@ import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js';
 
+class TitleEditor extends InlineEditor {}
 class ContentEditor extends InlineEditor {}
 
 // Plugins to include in the build.
@@ -161,4 +162,22 @@ ContentEditor.defaultConfig = {
   licenseKey: "",
 };
 
-export default ContentEditor;
+// Plugins to include in the build.
+TitleEditor.builtinPlugins = [
+  Bold,
+  Essentials,
+  Heading,
+  Italic,
+  Link,
+  Paragraph,
+];
+TitleEditor.defaultConfig = {
+  toolbar: {
+    items: ["heading", "|", "bold", "italic", "link"],
+  },
+  language: "en",
+  licenseKey: "",
+};
+export default {
+  TitleEditor, ContentEditor
+}
