@@ -159,6 +159,15 @@ ContentEditor.defaultConfig = {
       "imageTextAlternative",
     ],
   },
+  simpleUpload: {
+    licenseKey: '',
+    uploadUrl: 'http://35082772e937.ngrok.io/api/v1/files/ck/images',
+    withCredentials: false,
+    headers: {
+      'X-CSRF-TOKEN': 'CSRF-Token',
+      Authorization: 'Bearer <JSON Web Token>'
+    }
+  },
   licenseKey: "",
 };
 
