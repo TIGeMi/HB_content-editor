@@ -79,6 +79,7 @@ ContentEditor.builtinPlugins = [
   TableToolbar,
 ];
 ContentEditor.defaultConfig = {
+  placeholder: "Type your post content here",
   toolbar: {
     items: [
       "undo",
@@ -161,7 +162,7 @@ ContentEditor.defaultConfig = {
   },
   simpleUpload: {
     licenseKey: '',
-    uploadUrl: 'http://35082772e937.ngrok.io/api/v1/files/ck/images',
+    uploadUrl: 'http://example.com',
     withCredentials: false,
     headers: {
       'X-CSRF-TOKEN': 'CSRF-Token',
@@ -181,6 +182,7 @@ TitleEditor.builtinPlugins = [
   Paragraph,
 ];
 TitleEditor.defaultConfig = {
+  placeholder: "Enter the title here",
   toolbar: {
     items: ["heading", "|", "bold", "italic", "link"],
   },
