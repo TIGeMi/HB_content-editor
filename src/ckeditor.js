@@ -28,8 +28,7 @@ import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
-import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
+import HtmlEmbed from "@ckeditor/ckeditor5-html-embed/src/htmlembed";
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat";
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
@@ -66,8 +65,7 @@ ContentEditor.builtinPlugins = [
   Link,
   LinkImage,
   List,
-  MediaEmbed,
-  MediaEmbedToolbar,
+  HtmlEmbed,
   Paragraph,
   SimpleUploadAdapter,
   Strikethrough,
@@ -105,7 +103,7 @@ ContentEditor.defaultConfig = {
       "|",
       "link",
       "imageInsert",
-      "mediaEmbed",
+      "htmlEmbed",
       "codeBlock",
       "|",
       "removeFormat",
@@ -130,8 +128,6 @@ ContentEditor.defaultConfig = {
     ],
   },
   image: {
-    styles: ["alignLeft", "alignCenter", "alignRight"],
-
     resizeOptions: [
       {
         name: "resizeImage:original",
@@ -150,24 +146,16 @@ ContentEditor.defaultConfig = {
       },
     ],
 
-    toolbar: [
-      "imageStyle:alignLeft",
-      "imageStyle:alignCenter",
-      "imageStyle:alignRight",
-      "|",
-      "resizeImage",
-      "|",
-      "imageTextAlternative",
-    ],
+    toolbar: ["resizeImage", "|", "imageTextAlternative"],
   },
   simpleUpload: {
-    licenseKey: '',
-    uploadUrl: 'http://example.com',
+    licenseKey: "",
+    uploadUrl: "http://example.com",
     withCredentials: false,
     headers: {
-      'X-CSRF-TOKEN': 'CSRF-Token',
-      Authorization: 'Bearer <JSON Web Token>'
-    }
+      "X-CSRF-TOKEN": "CSRF-Token",
+      Authorization: "Bearer <JSON Web Token>",
+    },
   },
   licenseKey: "",
 };
